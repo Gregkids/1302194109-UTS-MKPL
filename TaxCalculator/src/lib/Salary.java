@@ -1,6 +1,6 @@
 package lib;
 
-public class Salary{
+public class Salary extends Employee{
 
     private int monthlySalary;
 	private int otherMonthlyIncome;
@@ -32,11 +32,6 @@ public class Salary{
 	public void setAdditionalIncome(int income) {	
 		this.otherMonthlyIncome = income;
 	}
-	
-	public void setSpouse(String spouseName, String spouseIdNumber) {
-		this.spouseName = spouseName;
-		this.spouseIdNumber = idNumber;
-	}
 
     public int getAnnualIncomeTax() {
 		
@@ -51,5 +46,5 @@ public class Salary{
 		
 		return TaxFunction.calculateTax(monthlySalary, otherMonthlyIncome, monthWorkingInYear, annualDeductible, spouseIdNumber.equals(""), childIdNumbers.size());
 	}
-    
+
 }

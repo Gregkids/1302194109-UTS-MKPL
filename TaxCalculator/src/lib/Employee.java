@@ -42,23 +42,15 @@ public class Employee {
 		childNames = new LinkedList<String>();
 		childIdNumbers = new LinkedList<String>();
 	}
+
+	public void setSpouse(String spouseName, String spouseIdNumber) {
+		this.spouseName = spouseName;
+		this.spouseIdNumber = idNumber;
+	}
 	
 	public void addChild(String childName, String childIdNumber) {
 		childNames.add(childName);
 		childIdNumbers.add(childIdNumber);
 	}
 	
-	public int getAnnualIncomeTax() {
-		
-		//Menghitung berapa lama pegawai bekerja dalam setahun ini, jika pegawai sudah bekerja dari tahun sebelumnya maka otomatis dianggap 12 bulan.
-		LocalDate date = LocalDate.now();
-		
-		if (date.getYear() == yearJoined) {
-			monthWorkingInYear = date.getMonthValue() - monthJoined;
-		}else {
-			monthWorkingInYear = 12;
-		}
-		
-		return TaxFunction.calculateTax(monthlySalary, otherMonthlyIncome, monthWorkingInYear, annualDeductible, spouseIdNumber.equals(""), childIdNumbers.size());
-	}
 }

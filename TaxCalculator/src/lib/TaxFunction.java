@@ -1,6 +1,6 @@
 package lib;
 
-public class TaxFunction {
+public class TaxFunction extends Salary {
 
 	
 	/**
